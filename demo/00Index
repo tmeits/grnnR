@@ -1,0 +1,2 @@
+demo_TRAIN    synthesize grnn
+demo_TEST     perform batch test on grnn

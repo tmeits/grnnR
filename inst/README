@@ -1,0 +1,91 @@
+notes:
+ 
+1.  The demo dataset and plots were constructed from data contained in the
+    PROBEN1 benchmark collection. The benchmark set is available for anonymous
+    FTP at ftp.cs.cmu.edu /afs/cs/project/connect/bench/contrib/prechelt.
+    See 
+        "Proben1 -- A Set of Neural Network Benchmark Problems and
+        Benchmarking Rules,"
+        Lutz Prechelt,
+        Fakultat fur Informatik,
+        Universitat Karlsruke, 1994.
+
+2.  Code information:
+
+    grnnR assumes "topological" organization with: 
+    -column-major observations (pattern matrix, P)
+    -each row represents a domain variable
+    -column-major range targets and grnnR estimates
+
+    TERMINOLOGY
+  
+    domain -> input space -> observations -> pattern vectors
+    grnnR -> nnet -> neurons -> center vectors -> weight vectors
+    nnet -> neurons -> Gaussian kernels -> spread -> SIGMA
+    range -> output space -> target vectors (reference, estimated)
+
+    SYMBOL LIST
+
+    N: Nr observations
+       scalar
+    n: Nr neurons
+       scalar
+    d: input space dimension
+       scalar
+    r: output space dimension
+       scalar
+    p: pattern vector
+       vector, d x 1
+    P: matrix of pattern vectors
+       matrix, d x N
+    t: target vector
+       vector, r x 1
+    T: matrix of target vectors
+       matrix, r x N
+    t_hat: estimated target vector
+       vector, r x 1
+    T_hat: matrix of estimated target vectors
+       matrix, r x N
+    c: center vector
+       vector, d x 1
+    C: matrix of center vectors
+       matrix, d x n
+    w: weight vector
+       vector, r x 1
+    W: matrix of weight vectors
+       matrix, r x n
+    s: output of summation neuron
+       scalar
+    SIGMA: Gaussian spread value
+       scalar
+    err: error vector
+       vector, r x 1
+    ERR: matrix of error vectors
+       matrix, r x N
+    X_mc: mean-centered matrix
+       matrix, dim of X
+    mn_Vect: vector of row (variable) means
+       vector, d x 1
+    X_var: variance-scaled matrix
+       matrix, dim of X
+    var_Vect: vector of variable (row) variances
+       vector, d x 1
+
+    FUNCTIONS
+
+    1. grnn_Train
+    2. grnn
+    3. compute_SIGMA
+    4. test_Stats
+    5. plot_Targets
+    6. plot_Box
+    7. mean_center_X
+    8. var_scale_X
+
+3.  Example/demo:
+    A demo script is provided which loads a sample dataset (P_trn, T_trn, P_tst,
+    and T_tst), synthesizes the grnn, then performs batch testing. An error
+    plot is generated to the terminal and saved to file grnnPlot.eps. To load
+    the demo, type "demo(demo_TRAIN)" followed by "demo(demo_TEST)". See the
+    script files demo_TRAIN and demo_TEST in the demo subdirectory for a usage
+    example of the grnnR package.

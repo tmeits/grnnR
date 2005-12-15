@@ -1,0 +1,14 @@
+compute_SIGMA           Compute Gaussian Spread
+demo_TEST               Demo, Batch Testing a GRNN
+demo_Train              Demo, Synthesize a GRNN
+grnn                    A Generalized Regression Neural Network
+grnn_Train              Synthesize a GRNN
+mean_center_X           Perform Mean-centering on a Matrix
+plot_Box                Generate Error Box/Whisker Plot
+plot_Targets            Plot Targets vs. Neural Net Estimates
+P_trn                   Training Pattern Data
+P_tst                   Test Pattern Data
+test_Stats              Produce Error Plots
+T_trn                   Training Target Data
+T_tst                   Test Target Data
+var_scale_X             Perform Variance Scaling on a Matrix
